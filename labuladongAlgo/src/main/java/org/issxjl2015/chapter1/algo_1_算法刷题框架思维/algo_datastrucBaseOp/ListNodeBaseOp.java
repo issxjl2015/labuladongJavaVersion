@@ -1,5 +1,8 @@
 package org.issxjl2015.chapter1.algo_1_算法刷题框架思维.algo_datastrucBaseOp;
 
+
+import org.issxjl2015.common.ListNode;
+
 public class ListNodeBaseOp {
 
     public void traverse(ListNode head) {
