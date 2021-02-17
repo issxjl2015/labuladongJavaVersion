@@ -1,7 +1,7 @@
 package org.issxjl2015.chapter1;
 
 import lombok.extern.slf4j.Slf4j;
-import org.issxjl2015.chapter1.algo_1_算法刷题框架思维.algo_datastrucBaseOp.Lc_124_二叉树中的最大路径和;
+import org.issxjl2015.chapter1.algo_1_算法刷题框架思维.algo_算法刷题指南.Lc_124_二叉树中的最大路径和;
 import org.issxjl2015.common.TreeNode;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package org.issxjl2015.chapter1.algo_1_算法刷题框架思维.algo_datastrucBaseOp;
+package org.issxjl2015.chapter1.algo_1_算法刷题框架思维.algo_算法刷题指南;
 
 import org.issxjl2015.common.TreeNode;
 
