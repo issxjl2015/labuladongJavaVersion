@@ -36,10 +36,8 @@ public class Lc_99_恢复二叉搜索树 {
         inOrder(root.left);
 
         // 中序遍历
-        if (firstNode == null && preNode.val > root.val) {
-            firstNode = preNode;
-        }
-        if (firstNode != null && preNode.val > root.val) {
+        if (preNode.val > root.val) {
+            firstNode = firstNode == null ? preNode : firstNode;
             secondNode = root;
         }
 
