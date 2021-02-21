@@ -14,4 +14,13 @@ public class Lc_322_零钱兑换_Test {
         int ans = solution.coinChange1(coins, amount);
         Assert.assertEquals(ans, 3);
     }
+
+    @Test
+    public void test2() {
+        Lc_322_零钱兑换 solution = new Lc_322_零钱兑换();
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        int ans = solution.coinChange2(coins, amount);
+        Assert.assertEquals(ans, 3);
+    }
 }
