@@ -25,6 +25,27 @@ public class Lc_322_零钱兑换 {
         return res != Integer.MAX_VALUE ? res : -1;
     }
 
+    public int coinChange2(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+
+        return coinChange(dp, coins, amount);
+    }
+
+    private int coinChange(int[] dp, int[] coins, int amount) {
+        // base case
+        if (amount == 0) return 0;
+        if (amount < 0) return -1;
+        if (dp[amount] != 0) return dp[amount];
+        int ans = amount + 1;
+        for (int coin : coins) {
+            int subproblem = coinChange(dp, coins, amount - coin);
+            if (subproblem == -1) continue;
+            ans = Math.min(ans, 1 + subproblem);
+        }
+        dp[amount] = ans != Integer.MAX_VALUE ? ans : -1;
+        return dp[amount];
+    }
+
 
     /**
      * dp 数组的迭代解法
@@ -32,7 +53,7 @@ public class Lc_322_零钱兑换 {
      * @param amount
      * @return
      */
-    public int coinChange2(int[] coins, int amount) {
+    public int coinChange3(int[] coins, int amount) {
         if (amount == 0) return 0;
         if (amount < 0) return -1;
         // 定义dp函数
