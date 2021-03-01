@@ -59,4 +59,66 @@ public int BFS(Node start, Node target) {
 >visited 的主要作用：防止走回头路，大部分时候都是必需的
 >>例外：二叉树结构，没有子节点到父节点的指针，不会走回头路就不需要 visited
  
- ## 
+ ## 二叉树的最小高度
+ 二叉树的最小高度，也就是根节点到叶子节点的最短距离。
+ 需要明确起点 start 和 终点 target 是什么，以及 怎么判断到达了终点。
+ 
+ 起点就是 root 根节点，终点就是最靠近根节点的那个 “叶子节点”，叶子节点就是两个子节点都是null的节点。
+ ```java
+if (cur.left == null && cur.right == null) {
+    // 到达叶子节点
+}
+```
+
+那么，按照上述框架加以改造来写解法即可：
+```java
+public class Lc_111_二叉树的最小深度 {
+    
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        // root 本身就是一层，将 depth 初始化 为 1
+        int depth = 1;
+        
+        while (!q.isEmpty()) {
+            int sz = q.size();
+            // 将当前队列中所有节点向四周扩散
+            for (int i = 0; i < sz; i++) {
+                TreeNode cur = q.poll();
+                // 判断是否达到终点
+                if (cur.left == null && cur.right == null) {
+                    return depth;
+                }
+                
+                // 将 cur 的 相邻节点加入队列
+                if (cur.left != null) {
+                    q.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    q.offer(cur.right);
+                }
+            }
+            
+            // 在这里增加步数
+            depth++;
+        }
+        return depth;
+    }
+}
+```
+
+1、为啥BFS 可以找到最短距离，DFS 不行吗？
+>答：1、看BFS的逻辑，depth 每增加一次，队列中所有节点都向前迈一步，这个逻辑可以保证一旦找到一个终点，走的步数肯定是最少的。
+>
+>2、DFS其实也可以找到最短路径，但是DFS实际上是通过递归的堆栈记录走过的路径的，要找到最短路径，肯定要把二叉树中所有的节点全部探索完，才能对比出最短的路径。
+>
+>而 BFS 还没遍历完整棵树，就找到了最短距离，因此，BFS 相对更高效。
+
+2、既然BFS 这么好，为啥 DFS 还要存在？
+>答：BFS 可以找到最短距离，但是空间复杂度搞，而DFS 空间复杂度较低。
+>
+>客观来说，BFS 还是有代价的，一般来说，找最短路径使用BFS，其他的时候，用 DFS 多一些。（主要是递归代码比较好写）
