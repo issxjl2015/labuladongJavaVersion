@@ -1,15 +1,14 @@
-package org.issxjl2015.chapter1;
+package org.issxjl2015.tx.linkedlist.lc_环形链表II;
 
-import org.issxjl2015.chapter1.algo_5_双指针技巧套路框架.Lc_142_环形链表II;
 import org.issxjl2015.common.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Lc_142_环形链表II_test {
+public class SolutionTest {
 
     @Test
     public void test1() {
-        Lc_142_环形链表II solution = new Lc_142_环形链表II();
+        Solution solution = new Solution();
         ListNode head = new ListNode(0);
         ListNode head2 = new ListNode(3);
         head.next = head2;
@@ -25,9 +24,10 @@ public class Lc_142_环形链表II_test {
         Assert.assertEquals(2, ans.val);
     }
 
+
     @Test
     public void test2() {
-        Lc_142_环形链表II solution = new Lc_142_环形链表II();
+        Solution solution = new Solution();
         ListNode head = new ListNode(0);
         ListNode head2 = new ListNode(3);
         head.next = head2;
@@ -39,11 +39,11 @@ public class Lc_142_环形链表II_test {
 
     @Test
     public void test3() {
-        Lc_142_环形链表II solution = new Lc_142_环形链表II();
+        Solution solution = new Solution();
         ListNode head = new ListNode(1);
 
+        // 无环的情况下，会返回null
         ListNode ans = solution.detectCycle(head);
         Assert.assertNull(ans);
     }
-
 }
