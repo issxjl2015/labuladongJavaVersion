@@ -1,4 +1,4 @@
-package org.issxjl2015.chapter1;
+package org.issxjl2015.chapter2;
 
 import org.issxjl2015.chapter2.algo_1_动态规划设计_最长递增子序列.Lc_300_最长递增子序列;
 import org.junit.Assert;
