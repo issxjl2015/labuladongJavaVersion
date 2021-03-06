@@ -7,21 +7,23 @@ public class Lc_300_最长递增子序列 {
         if (nums.length == 1) {
             return 1;
         }
+
         int[] dp = new int[nums.length];
-        // base case
         Arrays.fill(dp, 1);
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
+                if (nums[i] > nums[j]) {
+                    // 当nums[i] > nums[j]时，将dp[j]对应的最长递增子序列后面接上 nums[i],
+                    // 与 dp[i]对应的最长子序列进行比较
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
         int ans = 0;
         // 需要重新遍历一遍数组才知道最大的长度
-        for (int value : dp) {
-            ans = Math.max(ans, value);
+        for (int dpVal : dp) {
+            ans = Math.max(ans, dpVal);
         }
         return ans;
     }
