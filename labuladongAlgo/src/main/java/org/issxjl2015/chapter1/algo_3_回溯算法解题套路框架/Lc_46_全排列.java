@@ -21,6 +21,7 @@ public class Lc_46_全排列 {
             return;
         }
 
+        //
         for (int i = 0; i < nums.length; i++) {
             if (list.contains(nums[i])) {
                 continue;
