@@ -25,11 +25,14 @@ public class Lc_438_找到字符串中所有字母异位词 {
 
             if (need.containsKey(c)) {
                 window.put(c, window.getOrDefault(c, 0) + 1);
+                // 判断窗口内该字符与目标字符串内该字符的频次是否相等
                 if (need.get(c).equals(window.get(c))) {
+                    // 相等，则 +1
                     vaild++;
                 }
             }
 
+            // 当前窗口的长度 >= 目标字符串的长度，则需要判断是否满足题目要求
             while (right - left >= p.length()) {
                 // 判断是否找到合适的子串
                 if (vaild == need.size()) {

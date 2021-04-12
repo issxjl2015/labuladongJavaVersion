@@ -21,6 +21,7 @@ public class Lc_77_组合 {
             return;
         }
 
+        // 组合：遍历的起始点是 index
         for (int i = index; i < nums.length; i++) {
             list.add(nums[i]);
             backtrack(list, nums, i + 1, k);

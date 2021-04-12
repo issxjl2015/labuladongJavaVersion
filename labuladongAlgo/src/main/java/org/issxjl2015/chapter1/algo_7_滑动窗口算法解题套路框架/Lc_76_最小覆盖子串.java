@@ -12,7 +12,9 @@ public class Lc_76_最小覆盖子串 {
             need.put(t.charAt(i), need.getOrDefault(t.charAt(i), 0) + 1);
         }
 
+        // 滑动窗口的左右边界
         int left = 0, right = 0;
+        // 满足条件的个数，用于判定条件
         int valid = 0;
 
         int start = 0, len = Integer.MAX_VALUE;

@@ -14,6 +14,7 @@ public class Lc_45_跳跃游戏II {
             farthest = Math.max(farthest, nums[i] + i);
             if (end == i) {
                 jumps++;
+                // 记录最远能到的索引
                 end = farthest;
             }
         }

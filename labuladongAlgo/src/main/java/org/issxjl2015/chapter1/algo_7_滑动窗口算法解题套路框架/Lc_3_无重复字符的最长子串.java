@@ -8,12 +8,16 @@ public class Lc_3_无重复字符的最长子串 {
         if (s == null || s.length() == 0) {
             return 0;
         }
+        // map: key-字符，value-频次
         Map<Character, Integer> map = new HashMap<>();
 
+        // 确定滑动窗口的左右边界
         int left = 0, right = 0;
+        // 至少包含自己
         int ans = 1;
 
         while (right < s.length()) {
+            // 右边界进入的字符
             char c = s.charAt(right);
             if (map.containsKey(c)) {
                 // 存在重复元素，则将左边界右移

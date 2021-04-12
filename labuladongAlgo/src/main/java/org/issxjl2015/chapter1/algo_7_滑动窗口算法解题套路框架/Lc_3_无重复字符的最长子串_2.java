@@ -3,6 +3,10 @@ package org.issxjl2015.chapter1.algo_7_滑动窗口算法解题套路框架;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 用滑动窗口算法实现无重复字符的最长子串
+ *
+ */
 public class Lc_3_无重复字符的最长子串_2 {
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {

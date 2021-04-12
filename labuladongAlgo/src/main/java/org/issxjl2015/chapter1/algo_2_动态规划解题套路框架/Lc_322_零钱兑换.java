@@ -38,6 +38,7 @@ public class Lc_322_零钱兑换 {
         if (dp[amount] != 0) return dp[amount];
         int ans = amount + 1;
         for (int coin : coins) {
+            // 递归调用子问题
             int subproblem = coinChange(dp, coins, amount - coin);
             if (subproblem == -1) continue;
             ans = Math.min(ans, 1 + subproblem);
@@ -67,9 +68,13 @@ public class Lc_322_零钱兑换 {
                 if (i - coin < 0) {
                     continue;
                 }
+                // 状态转移方程：min(dp[i], 1 + dp[i - coin),
+                // 如果 i - coin > 0，那么肯定可以凑出 i - coin的硬币，再加上一枚 coin 的硬币
                 dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
             }
         }
+        // 如果 dp[amount] == amount + 1 表明，不能凑出这样的硬币，返回 -1
+        // 如果可以凑出，则返回 凑出这样的硬币，需要的最少的硬币个数
         return dp[amount] == (amount + 1) ? -1 : dp[amount];
     }
 }

@@ -16,6 +16,7 @@ public class Lc_46_全排列 {
             ans.add(new LinkedList(track));
             return;
         }
+        // 全排列：起始点是 从 0 开始的
         for (int i = 0; i < nums.length; i++) {
             if (track.contains(nums[i])) {
                 continue;

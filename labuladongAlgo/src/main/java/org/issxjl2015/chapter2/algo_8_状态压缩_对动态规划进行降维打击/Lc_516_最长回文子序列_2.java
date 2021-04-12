@@ -14,6 +14,7 @@ public class Lc_516_最长回文子序列_2 {
         // base case
         Arrays.fill(dp, 1);
 
+        // 反向遍历
         for (int i = len - 2; i >= 0; i--) {
             int pre = 0;
             for (int j = i + 1; j < len; j++) {

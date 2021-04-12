@@ -8,6 +8,7 @@ public class Lc_300_最长递增子序列 {
             return 1;
         }
 
+        // dp 数组的定义: dp[i] 表示的是 nums[0...i] 中最长的递增子序列的长度
         int[] dp = new int[nums.length];
         Arrays.fill(dp, 1);
 

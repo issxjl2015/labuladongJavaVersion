@@ -5,6 +5,10 @@ import java.util.Map;
 
 /**
  * 判断 s2 是否包含 s1 的排列
+ *
+ * 核心：s2 是否包含 s1 的排列，直接判断s1的字符和频次，在s2的子串中是否有即可，
+ * 至于怎么排列的，不关心，因为题目要求的就是 s1 的排列
+ *
  */
 public class Lc_567_字符串的排列 {
     public boolean checkInclusion(String s1, String s2) {

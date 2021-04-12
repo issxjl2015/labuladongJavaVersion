@@ -15,6 +15,7 @@ public class Lc_78_子集 {
     public void backtrack(LinkedList<Integer> list, int[] nums, int index) {
         ans.add(new LinkedList<>(list));
 
+        // 子集：起始点从index
         for (int i = index; i < nums.length; i++) {
             list.add(nums[i]);
             backtrack(list, nums, i + 1);
