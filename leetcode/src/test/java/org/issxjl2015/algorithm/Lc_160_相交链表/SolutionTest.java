@@ -34,6 +34,10 @@ public class SolutionTest {
         Solution solution = new Solution();
         ListNode ans = solution.getIntersectionNode(headA, headB);
         Assert.assertEquals(c1, ans);
+
+        Solution2 solution2 = new Solution2();
+        ListNode ans2 = solution2.getIntersectionNode(headA, headB);
+        Assert.assertEquals(c1, ans2);
     }
 
     @Test
@@ -46,5 +50,9 @@ public class SolutionTest {
         Solution solution = new Solution();
         ListNode ans = solution.getIntersectionNode(headA, headB);
         Assert.assertEquals(a1, ans);
+
+        Solution2 solution2 = new Solution2();
+        ListNode ans2 = solution2.getIntersectionNode(headA, headB);
+        Assert.assertEquals(a1, ans2);
     }
 }
