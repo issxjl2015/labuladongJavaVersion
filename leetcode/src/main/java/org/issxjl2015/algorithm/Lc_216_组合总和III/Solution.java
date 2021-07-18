@@ -27,7 +27,7 @@ public class Solution {
             return;
         }
 
-        for (int i = index; i <= 9 && track.size() < k && sum < n && i <= n - (k - track.size()) + 1; i++) {
+        for (int i = index; i <= 9 - (k - track.size()) + 1; i++) {
             track.add(i);
             sum += i;
             dfs(track, n, k, i + 1, sum);
