@@ -9,7 +9,9 @@ public class Solution {
         dp[0] = 0;
         dp[1] = nums[0];
         for (int i = 2; i <= nums.length; i++) {
-            // 递推公式
+            // 递推公式：到了第 i 房间，
+            // 1、如果 i - 1 偷过了，那么 i 不能偷，最大值为 dp[i - 1]
+            // 2、如果 i - 1 没偷，那么 i 可以偷，最大值为 dp[i - 2] + nums[i - 1]
             dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
         }
 
