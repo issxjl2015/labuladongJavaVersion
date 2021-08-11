@@ -5,7 +5,7 @@ package org.issxjl2015.algorithm.Lc_424_替换后的最长重复字符;
  *
  * @Author: issxjl2015
  * @Date: 2021/08/11/20:26
- * @Description: 这个代码不能AC，仅供参考，是个错误思路，请注意
+ * @Description: 
  */
 public class Solution2 {
     public int characterReplacement(String s, int k) {
